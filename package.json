@@ -1,0 +1,11 @@
+{
+  "name": "yc-webp-webpack-plugin",
+  "version": "1.0.0",
+  "description": "洋葱WebP图片生成工具",
+  "main": "plugin.js",
+  "author": "liuqing",
+  "license": "ISC",
+  "dependencies": {
+    "ycwebp": "^1.0.1"
+  }
+}
