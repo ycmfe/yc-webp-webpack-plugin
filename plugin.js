@@ -5,7 +5,7 @@ class YcWebpWebpackPlugin {
         this.options = options;
     }
     apply(compiler) {
-        const onEmit = (compilation, cb) => {
+        const onAfterEmit = (compilation, cb) => {
             const { path, fileOption, compressOption } = this.options;
             return webp({
                 path,
@@ -22,10 +22,10 @@ class YcWebpWebpackPlugin {
 
         if (compiler.hooks) {
             // webpack 4.x
-            compiler.hooks.afterEmit.tapAsync('YcWebpWebpackPlugin', onEmit);
+            compiler.hooks.afterEmit.tapAsync('YcWebpWebpackPlugin', onAfterEmit);
         } else {
             // older versions
-            compiler.plugin('afterEmit', onEmit);
+            compiler.plugin('after-emit', onAfterEmit);
         }
     }
 }
