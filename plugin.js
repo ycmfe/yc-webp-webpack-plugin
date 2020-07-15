@@ -22,10 +22,10 @@ class YcWebpWebpackPlugin {
 
         if (compiler.hooks) {
             // webpack 4.x
-            compiler.hooks.emit.tapAsync('YcWebpWebpackPlugin', onEmit);
+            compiler.hooks.afterEmit.tapAsync('YcWebpWebpackPlugin', onEmit);
         } else {
             // older versions
-            compiler.plugin('emit', onEmit);
+            compiler.plugin('afterEmit', onEmit);
         }
     }
 }
